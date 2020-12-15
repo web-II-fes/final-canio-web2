@@ -1,1 +1,57 @@
-<p>mostrar works!</p>
+    <h1>Listado de Envios</h1>
+
+    <button mat-raised-button [routerLink]="'/crear'" class="crear">Crear Persona</button>
+    <div class="mostrarT">
+
+    <table mat-table [dataSource]="dataSource">
+            
+        <ng-container matColumnDef="nombreRemit">
+            <th mat-header-cell *matHeaderCellDef> Nombre Remitente</th>
+            <td mat-cell *matCellDef="let element"> {{element.nombreRemit | titlecase}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="direccionRemit">
+            <th mat-header-cell *matHeaderCellDef> Direccion Remitente</th>
+            <td mat-cell *matCellDef="let element"> {{element.direccionRemit | titlecase}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombreDestin">
+            <th mat-header-cell *matHeaderCellDef> Nombre Destinatario </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombreDestin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="direccionDestin">
+            <th mat-header-cell *matHeaderCellDef> Direccion Destinatario </th>
+            <td mat-cell *matCellDef="let element"> {{element.direccionDestin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcionPaq">
+        <th mat-header-cell *matHeaderCellDef> Descripcion Paquete </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcionPaq}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fechaEntrega">
+            <th mat-header-cell *matHeaderCellDef> Fecha de Entrega </th>
+            <td mat-cell *matCellDef="let element"> {{element.fechaEntrega | date:'dd/MM/yyyy'}} </td>
+        </ng-container>
+        
+       <ng-container matColumnDef="borrar">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let paquete">
+                <button type="button" (click)="borrarPaquete(paquete)" mat-flat-button color="accent">Borrar</button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let paquete">
+                <button (click)="editarPaquete(paquete._id)" mat-flat-button color="accent">Editar</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
+
+    </table>
+
+    </div>

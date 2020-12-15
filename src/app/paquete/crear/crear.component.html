@@ -1,1 +1,46 @@
-<p>crear works!</p>
+    <h1>Formulario de envio de Paquete</h1>
+
+    <div class="datosPaquete">
+                
+        <form [formGroup]='paqueteForm' (ngSubmit)=submit()>
+
+            <div id="margenes">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre Remitente</mat-label>
+                        <input matInput type="text" formControlName="nombreRemit" class="textBox">          
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill">
+                    <mat-label >Direccion Remitente</mat-label>
+                        <input matInput type="text" formControlName="direccionRemit" class="textBox">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre Destinatario</mat-label>
+                    <input matInput type="text" formControlName="nombreDestin" class="textBox">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label >Direccion Destinatario</mat-label>
+                        <input matInput type="text" formControlName="direccionDestin" class="textBox">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label >Descripcion Paquete</mat-label>
+                        <input matInput type="text" formControlName="descripcionPaq" class="textBox">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de Entrega</mat-label>
+                    <input matInput type="date" formControlName="fechaEntrega" class="textBox">
+                </mat-form-field>
+
+           </div>
+
+            <div class="enviar">
+                <button mat-raised-button class="buttonform">Guardar</button>
+            </div>
+        </form>
+       
+    </div>
+

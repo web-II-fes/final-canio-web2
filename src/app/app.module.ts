@@ -14,8 +14,9 @@ import { MatMenuModule  } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
-import { CrearComponent } from './crear/crear/crear.component';
-import { MostrarComponent } from './item/mostrar/mostrar.component';
+import { CrearComponent } from './paquete/crear/crear.component';
+import { MostrarComponent } from './paquete/mostrar/mostrar.component';
+import { PaqueteService } from './servicios/paquete.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { MostrarComponent } from './item/mostrar/mostrar.component';
     MatCardModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [PaqueteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
