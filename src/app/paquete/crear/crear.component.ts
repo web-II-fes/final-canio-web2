@@ -83,7 +83,7 @@ export class CrearComponent implements OnInit {
       });
     }
 
-    this.router.navigate(['/mostrarPaquete']);
+    this.router.navigate(['/mostrar']);
     
   }
 
